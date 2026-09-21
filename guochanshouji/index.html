@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国产手机哪个好？为您提供2024年最新国产手机品牌排行榜、各价位段高性价比手机推荐、参数对比及选购指南，助您挑选最适合的旗舰与千元机。">
+    <meta name="keywords" content="国产手机哪个好,国产手机推荐,高性价比手机,手机参数对比,2024手机选购指南">
+    <title>国产手机哪个好 - 2024高性价比手机推荐与选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-dark: #0056b3;
+            --secondary-color: #6c757d;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-light: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar {
+                display: flex;
+                align-items: center;
+                background: #f1f3f5;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                width: 300px;
+            }
+            .search-bar input {
+                border: none;
+                background: transparent;
+                outline: none;
+                margin-left: 0.5rem;
+                width: 100%;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Main Content */
+        main {
+            padding-bottom: 4rem;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .phone-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .phone-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e9ecef;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: normal;
+        }
+
+        .badge-hot { background-color: #ffebee; color: #c62828; }
+        .badge-new { background-color: #e3f2fd; color: #1565c0; }
+
+        .card-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            height: 3em;
+            overflow: hidden;
+        }
+
+        .specs-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .spec-label { color: var(--text-light); }
+        .spec-value { font-weight: 600; }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-item {
+            text-align: center;
+        }
+
+        .guide-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .guide-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .icon-plus {
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            padding: 3rem 0;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #495057;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                手机选购指南
+            </a>
+            <nav class="nav-menu">
+                <a href="#top" class="active">首页</a>
+                <a href="#recommend">热门推荐</a>
+                <a href="#guide">选购攻略</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <div class="search-bar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c757d" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="搜索型号...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>国产手机哪个好？</h1>
+            <p>2024年最新国产旗舰与高性价比机型全面解析，助您轻松找到最适合的智能设备。</p>
+            <div class="hero-tags">
+                <span class="tag">性价比首选</span>
+                <span class="tag">拍照神器</span>
+                <span class="tag">游戏旗舰</span>
+                <span class="tag">商务办公</span>
+                <span class="tag">千元入门</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 热门推荐板块 -->
+        <section id="recommend" class="comparison-section">
+            <div class="section-title">
+                <h2>2024 年度热门机型推荐</h2>
+                <span style="font-size: 0.9rem; color: var(--text-light); font-weight: normal;">点击查看详细参数</span>
+            </div>
+            
+            <div class="comparison-grid">
+                <!-- Card 1 -->
+                <article class="phone-card">
+                    <img src="https://picsum.photos/seed/phone1/400/250" alt="小米14 Ultra" class="card-img">
+                    <div class="card-body">
+                        <div class="card-title">
+                            小米 14 Ultra
+                            <span class="badge badge-hot">影像旗舰</span>
+                        </div>
+                        <p class="card-desc">徕卡全明星四摄，骁龙8 Gen3处理器，骁龙8 Gen3，2K中国屏，5500mAh大电池。</p>
+                        <div class="specs-list">
+                            <div class="spec-item"><span class="spec-label">处理器</span><span class="spec-value">骁龙8 Gen3</span></div>
+                            <div class="spec-item"><span class="spec-label">屏幕</span><span class="spec-value">2K 120Hz</span></div>
+                            <div class="spec-item"><span class="spec-label">电池</span><span class="spec-value">5500mAh</span></div>
+                            <div class="spec-item"><span class="spec-label">充电</span><span class="spec-value">90W有线</span></div>
+                        </div>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="phone-card">
+                    <img src="https://picsum.photos/seed/phone2/400/250" alt="华为 Mate 60 Pro" class="card-img">
+                    <div class="card-body">
+                        <div class="card-title">
+                            华为 Mate 60 Pro
+                            <span class="badge badge-hot">商务旗舰</span>
+                        </div>
+                        <p class="card-desc">卫星通话，玄武架构，昆仑玻璃，XMAGE影像，HarmonyOS 4.0，麒麟9000S芯片。</p>
+                        <div class="specs-list">
+                            <div class="spec-item"><span class="spec-label">处理器</span><span class="spec-value">麒麟9000S</span></div>
+                            <div class="spec-item"><span class="spec-label">屏幕</span><span class="spec-value">1.82K 120Hz</span></div>
+                            <div class="spec-item"><span class="spec-label">电池</span><span class="spec-value">5000mAh</span></div>
+                            <div class="spec-item"><span class="spec-label">充电</span><span class="spec-value">88W有线</span></div>
+                        </div>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="phone-card">
+                    <img src="https://picsum.photos/seed/phone3/400/250" alt="荣耀 Magic 6 Pro" class="card-img">
+                    <div class="card-body">
+                        <div class="card-title">
+                            荣耀 Magic 6 Pro
+                            <span class="badge badge-new">护眼屏</span>
+                        </div>
+                        <p class="card-desc">青海湖电池，巨犀玻璃，荣耀绿洲护眼屏，卫星通信，超光影主摄，骁龙8 Gen3。</p>
+                        <div class="specs-list">
+                            <div class="spec-item"><span class="spec-label">处理器</span><span class="spec-value">骁龙8 Gen3</span></div>
+                            <div class="spec-item"><span class="spec-label">屏幕</span><span class="spec-value">5450mAh</span></div>
+                            <div class="spec-item"><span class="spec-label">电池</span><span class="spec-value">5450mAh</span></div>
+                            <div class="spec-item"><span class="spec-label">充电</span><span class="spec-value">80W有线</span></div>
+                        </div>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="phone-card">
+                    <img src="https://picsum.photos/seed/phone4/400/250" alt="iQOO 12" class="card-img">
+                    <div class="card-body">
+                        <div class="card-title">
+                            iQOO 12
+                            <span class="badge badge-new">游戏旗舰</span>
+                        </div>
+                        <p class="card-desc">蓝晶芯片技术栈，自研电竞芯片Q1，144Hz 1.5K屏，自研独显芯片，5000mAh电池。</p>
+                        <div class="specs-list">
+                            <div class="spec-item"><span class="spec-label">处理器</span><span class="spec-value">骁龙8 Gen3</span></div>
+                            <div class="spec-item"><span class="spec-label">屏幕</span><span class="spec-value">1.5K 144Hz</span></div>
+                            <div class="spec-item"><span class="spec-label">电池</span><span class="spec-value">5000mAh</span></div>
+                            <div class="spec-item"><span class="spec-label">充电</span><span class="spec-value">120W有线</span></div>
+                        </div>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 选购指南板块 -->
+        <section id="guide" class="guide-section">
+            <div class="section-title">
+                <h2>如何挑选适合自己的国产手机？</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <div class="guide-icon">💰</div>
+                    <h3>预算决定选择</h3>
+                    <p>明确预算范围是第一步。千元机适合日常通讯，中端机适合主流娱乐，旗舰机适合追求极致体验的用户。</p>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">📸</div>
+                    <h3>看重拍照能力</h3>
+                    <p>喜欢拍照可关注徕卡、蔡司、XMAGE等影像系统，以及大底传感器和长焦镜头的配置。</p>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">🎮</div>
+                    <h3>游戏性能优先</h3>
+                    <p>玩大型游戏需关注处理器性能（骁龙8系/天玑9系）和散热系统，以及高刷屏幕的流畅度。</p>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">🔋</div>
+                    <h3>续航与快充</h3>
+                    <p>关注电池容量和充电功率。大电池配合快充能显著提升全天候使用的便利性。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题板块 -->
+        <section id="faq" class="faq-section">
+            <div class="section-title">
+                <h2>常见问题解答 (FAQ)</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>国产手机和苹果手机相比，哪个更适合日常使用？</span>
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>国产手机在性价比、快充、外观设计以及本土化功能（如应用双开、红包助手）上通常更有优势。如果您追求极致的系统流畅度和生态统一，苹果可能更合适；如果您希望获得更高的性能价格比和丰富的功能体验，国产手机是更好的选择。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>现在买手机，骁龙8 Gen 3 和天玑9300哪个更好？</span>
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>这两款处理器目前都属于顶级旗舰水平。骁龙8 Gen 3在游戏兼容性和发热控制上通常表现更稳定；天玑9300则拥有更强的单核性能和能效比。两者在实际体验上差异不大，具体选择取决于品牌调校和您个人的使用习惯。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>什么是“芯片组”？为什么它很重要？</span>
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>芯片组（SoC）是手机的核心大脑，决定了手机的运行速度、多任务处理能力和图形处理能力。对于玩游戏、剪辑视频或运行大型应用来说，性能更强的芯片组能带来更流畅的体验。</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        专注于为消费者提供最客观、最全面的国产手机评测与选购建议。我们不制造手机，我们只是客观评测的搬运工。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">小米手机</a></li>
+                        <li><a href="#">华为手机</a></li>
+                        <li><a href="#">OPPO手机</a></li>
+                        <li><a href="#">vivo手机</a></li>
+                        <li><a href="#">荣耀手机</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>选购指南</h4>
+                    <ul>
+                        <li><a href="#">手机参数详解</a></li>
+                        <li><a href="#">品牌对比评测</a></li>
+                        <li><a href="#">系统体验分析</a></li>
+                        <li><a href="#">售后服务政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱: support@phoneguide.com</li>
+                        <li>地址: 中国·深圳</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 手机选购指南. All Rights Reserved. 本站内容仅供参考，不作为购买唯一依据。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
