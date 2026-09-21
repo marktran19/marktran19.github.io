@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="91黄页 - 本地生活服务与便民信息查询平台，提供商家推荐、服务指南、便民资讯及在线留言服务。">
+    <meta name="keywords" content="91黄页,黄页,本地服务,便民信息,商家推荐,生活服务">
+    <title>91黄页-本地生活服务与便民信息查询指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e1e4e8;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 6px 12px;
+            outline: none;
+            width: 200px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 4px 16px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .search-box button:hover {
+            background: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .view-all:hover {
+            color: var(--accent-color);
+        }
+
+        /* Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-color);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .service-name {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .service-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Hot Listings */
+        .listing-item {
+            display: flex;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin-bottom: 16px;
+            align-items: center;
+            gap: 16px;
+            transition: box-shadow 0.2s;
+        }
+
+        .listing-item:hover {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .listing-rank {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--border-color);
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .listing-rank.top-1 { color: #e74c3c; }
+        .listing-rank.top-2 { color: #f39c12; }
+        .listing-rank.top-3 { color: #27ae60; }
+
+        .listing-img {
+            width: 80px;
+            height: 80px;
+            background-color: #eee;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .listing-info {
+            flex: 1;
+        }
+
+        .listing-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--primary-color);
+        }
+
+        .listing-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 12px;
+        }
+
+        .listing-tag {
+            background: #eef2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .listing-action {
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-main);
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .category-count {
+            background: #eee;
+            font-size: 0.8rem;
+            padding: 1px 6px;
+            border-radius: 10px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .listing-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .listing-img {
+                width: 100%;
+                height: 180px;
+            }
+
+            .listing-action {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">91<span>黄页</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">企业名录</a></li>
+                    <li><a href="#">便民服务</a></li>
+                    <li><a href="#">同城资讯</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索商家、服务、电话...">
+                <button type="button">搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>连接本地，服务生活</h1>
+            <p>91黄页为您提供最全面的本地商家信息、便民服务指南及行业资讯，让您轻松找到所需服务。</p>
+            <div class="hero-tags">
+                <span class="tag">家政保洁</span>
+                <span class="tag">维修服务</span>
+                <span class="tag">物流快递</span>
+                <span class="tag">教育培训</span>
+                <span class="tag">餐饮美食</span>
+                <span class="tag">休闲娱乐</span>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Left Content -->
+            <div class="main-content">
+                <!-- Service Categories -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">热门服务分类</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="service-grid">
+                        <div class="service-card">
+                            <span class="service-icon">🛠️</span>
+                            <div class="service-name">家电维修</div>
+                            <div class="service-desc">空调、冰箱、洗衣机专业维修</div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-icon">🏠</span>
+                            <div class="service-name">房屋装修</div>
+                            <div class="service-desc">室内设计、施工、监理服务</div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-icon">🚗</span>
+                            <div class="service-name">汽车服务</div>
+                            <div class="service-desc">洗车、保养、美容、救援</div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-icon">🧹</span>
+                            <div class="service-name">家政保洁</div>
+                            <div class="service-desc">日常保洁、深度清洗、搬家</div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-icon">📚</span>
+                            <div class="service-name">教育培训</div>
+                            <div class="service-desc">K12辅导、技能培训、语言学习</div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-icon">🍽️</span>
+                            <div class="service-name">餐饮美食</div>
+                            <div class="service-desc">特色餐厅、外卖配送、食材</div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-icon">💊</span>
+                            <div class="service-name">医疗健康</div>
+                            <div class="service-desc">药店、诊所、体检、康复</div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-icon">🏠</span>
+                            <div class="service-name">房产租赁</div>
+                            <div class="service-desc">房屋出租、二手房交易、中介</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Featured Listings -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">精选商家推荐</h2>
+                        <a href="#" class="view-all">查看更多商家 &rarr;</a>
+                    </div>
+
+                    <div class="listing-item">
+                        <span class="listing-rank top-1">1</span>
+                        <img src="https://picsum.photos/seed/service1/160/160" alt="商家图片" class="listing-img">
+                        <div class="listing-info">
+                            <div class="listing-title">极速家电维修中心</div>
+                            <div class="listing-meta">
+                                <span class="listing-tag">诚信商家</span>
+                                <span>服务区域：全市</span>
+                                <span>好评率：98%</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 8px;">提供专业空调、热水器安装维修服务，24小时上门，价格透明。</p>
+                        </div>
+                        <a href="#" class="listing-action">查看详情</a>
+                    </div>
+
+                    <div class="listing-item">
+                        <span class="listing-rank top-2">2</span>
+                        <img src="https://picsum.photos/seed/service2/160/160" alt="商家图片" class="listing-img">
+                        <div class="listing-info">
+                            <div class="listing-title">安馨家政服务有限公司</div>
+                            <div class="listing-meta">
+                                <span class="listing-tag">金牌服务</span>
+                                <span>服务区域：朝阳区</span>
+                                <span>好评率：96%</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 8px;">持证保姆、月嫂、钟点工，经验丰富，经过严格背景调查。</p>
+                        </div>
+                        <a href="#" class="listing-action">查看详情</a>
+                    </div>
+
+                    <div class="listing-item">
+                        <span class="listing-rank top-3">3</span>
+                        <img src="https://picsum.photos/seed/service3/160/160" alt="商家图片" class="listing-img">
+                        <div class="listing-info">
+                            <div class="listing-title">宏图装修设计工作室</div>
+                            <div class="listing-meta">
+                                <span class="listing-tag">设计专家</span>
+                                <span>服务区域：全城</span>
+                                <span>好评率：95%</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 8px;">专注于现代简约风格，免费上门量房，提供全案设计服务。</p>
+                        </div>
+                        <a href="#" class="listing-action">查看详情</a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">便民服务</h3>
+                    <ul class="category-list">
+                        <li><a href="#">房产信息 <span class="category-count">120+</span></a></li>
+                        <li><a href="#">车辆买卖 <span class="category-count">85+</span></a></li>
+                        <li><a href="#">二手闲置 <span class="category-count">340+</span></a></li>
+                        <li><a href="#">招聘求职 <span class="category-count">210+</span></a></li>
+                        <li><a href="#">车辆维修 <span class="category-count">60+</span></a></li>
+                        <li><a href="#">宠物服务 <span class="category-count">45+</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">使用指南</h3>
+                    <ul class="category-list">
+                        <li><a href="#">如何发布信息</a></li>
+                        <li><a href="#">商家入驻流程</a></li>
+                        <li><a href="#">信用认证体系</a></li>
+                        <li><a href="#">常见问题解答</a></li>
+                        <li><a href="#">隐私保护政策</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget" style="background: #fff3e0; border-color: #ffe0b2;">
+                    <h3 class="widget-title" style="color: #e65100; border-color: #ffe0b2;">商家入驻</h3>
+                    <p style="font-size: 0.9rem; color: #5d4037; margin-bottom: 12px;">免费注册企业账号，展示您的业务信息，获取更多客户咨询。</p>
+                    <button style="width: 100%; padding: 8px; background: #e65100; color: white; border: none; border-radius: 4px; cursor: pointer;">立即申请</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>关于91黄页</h3>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">91黄页致力于打造最便捷的本地生活服务信息平台，连接商家与消费者，让生活更简单。</p>
+            </div>
+            <div class="footer-col">
+                <h3>热门分类</h3>
+                <ul>
+                    <li><a href="#">家政保洁</a></li>
+                    <li><a href="#">房屋租赁</a></li>
+                    <li><a href="#">教育培训</a></li>
+                    <li><a href="#">维修服务</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>帮助中心</h3>
+                <ul>
+                    <li><a href="#">用户注册</a></li>
+                    <li><a href="#">商家入驻</a></li>
+                    <li><a href="#">信息发布规则</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>电话：400-123-4567</li>
+                    <li>邮箱：support@91huangye.com</li>
+                    <li>地址：中国某市某区某街道123号</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 91黄页 版权所有 | 本站内容仅供参考，具体信息请以商家实际为准</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
