@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KTV好唱的歌 - 专业KTV点歌指南，收录高音易唱、低音稳控、传唱度高的经典老歌与新歌榜单，提供试听与分类推荐。">
+    <meta name="keywords" content="KTV好唱的歌, KTV点歌推荐, 经典老歌, 热门K歌, 难度低的歌曲">
+    <title>KTV好唱的歌 - 经典老歌与热门K歌推荐指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4081;
+            --primary-dark: #c51162;
+            --secondary-color: #2196f3;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 分类标签 */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            padding: 10px 25px;
+            background: var(--card-bg);
+            border: 1px solid #eee;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-sub);
+            transition: var(--transition);
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(255, 64, 129, 0.3);
+        }
+
+        /* 核心榜单区域 */
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-main);
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .ranking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .song-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            border: 1px solid transparent;
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .song-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .rank-badge {
+            width: 30px;
+            height: 30px;
+            background: #f0f0f0;
+            color: var(--text-sub);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .rank-badge.top-3 {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .song-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .song-info p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .difficulty-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #eee;
+            color: #666;
+        }
+
+        .tag.high { background: #ffebee; color: #d32f2f; }
+        .tag.mid { background: #e3f2fd; color: #1976d2; }
+        .tag.low { background: #e8f5e9; color: #388e3c; }
+
+        .song-actions {
+            margin-top: auto;
+        }
+
+        .btn-listen {
+            width: 100%;
+            padding: 10px;
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-listen:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* 选歌技巧 */
+        .tips-section {
+            background: white;
+            padding: 50px 0;
+            margin-bottom: 40px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .tip-card {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: var(--border-radius);
+        }
+
+        .tip-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .tip-card h4 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .tip-card p {
+            color: var(--text-sub);
+            font-size: 15px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background: #f9f9f9;
+            color: var(--text-sub);
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #222;
+            color: #999;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                🎤 <span>KTV好唱的歌</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">经典老歌</a></li>
+                    <li><a href="#">网络热歌</a></li>
+                    <li><a href="#">KTV技巧</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索歌曲名称...">
+                <span>🔍</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>告别跑调，KTV也能拿麦王</h1>
+            <p>精选适合不同音域的KTV好唱的歌，从低音炮到高音C，总有一首适合你。</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 分类筛选 -->
+        <div class="categories">
+            <button class="cat-btn active">综合推荐</button>
+            <button class="cat-btn">经典老歌</button>
+            <button class="cat-btn">网络热歌</button>
+            <button class="cat-btn">低音好唱</button>
+            <button class="cat-btn">高音挑战</button>
+            <button class="cat-btn">慢歌情歌</button>
+        </div>
+
+        <!-- 榜单区域 -->
+        <section>
+            <h2 class="section-title">KTV必点好唱榜单 TOP 10</h2>
+            <div class="ranking-grid">
+                <!-- 卡片 1 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge top-3">1</div>
+                        <div class="song-info">
+                            <h3>稻香</h3>
+                            <p>周杰伦</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag low">音域适中</span>
+                        <span class="tag low">旋律流畅</span>
+                        <span class="tag mid">情感充沛</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：稻香 - 周杰伦')">▶ 试听片段</button>
+                    </div>
+                </article>
+
+                <!-- 卡片 2 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge top-3">2</div>
+                        <div class="song-info">
+                            <h3>朋友</h3>
+                            <p>周华健</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag low">低音稳重</span>
+                        <span class="tag mid">适合合唱</span>
+                        <span class="tag low">传唱度高</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：朋友 - 周华健')">▶ 试听片段</button>
+                    </div>
+                </article>
+
+                <!-- 卡片 3 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge top-3">3</div>
+                        <div class="song-info">
+                            <h3>十年</h3>
+                            <p>陈奕迅</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag low">技巧简单</span>
+                        <span class="tag mid">情感细腻</span>
+                        <span class="tag low">氛围轻松</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：十年 - 陈奕迅')">▶ 试听片段</button>
+                    </div>
+                </article>
+
+                <!-- 卡片 4 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge">4</div>
+                        <div class="song-info">
+                            <h3>小幸运</h3>
+                            <p>田馥甄</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag mid">高音不破</span>
+                        <span class="tag low">节奏舒缓</span>
+                        <span class="tag low">适合女生</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：小幸运 - 田馥甄')">▶ 试听片段</button>
+                    </div>
+                </article>
+
+                <!-- 卡片 5 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge">5</div>
+                        <div class="song-info">
+                            <h3>大海</h3>
+                            <p>张雨生</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag high">高音挑战</span>
+                        <span class="tag high">爆发力强</span>
+                        <span class="tag mid">气息要求</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：大海 - 张雨生')">▶ 试听片段</button>
+                    </div>
+                </article>
+
+                <!-- 卡片 6 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge">6</div>
+                        <div class="song-info">
+                            <h3>爱我别走</h3>
+                            <p>张震岳</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag low">音域极低</span>
+                        <span class="tag low">简单易学</span>
+                        <span class="tag mid">情感真挚</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：爱我别走 - 张震岳')">▶ 试听片段</button>
+                    </div>
+                </article>
+
+                <!-- 卡片 7 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge">7</div>
+                        <div class="song-info">
+                            <h3>童话</h3>
+                            <p>光良</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag low">气息平稳</span>
+                        <span class="tag mid">咬字清晰</span>
+                        <span class="tag low">全场必点</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：童话 - 光良')">▶ 试听片段</button>
+                    </div>
+                </article>
+
+                <!-- 卡片 8 -->
+                <article class="song-card">
+                    <div class="song-header">
+                        <div class="rank-badge">8</div>
+                        <div class="song-info">
+                            <h3>后来</h3>
+                            <p>刘若英</p>
+                        </div>
+                    </div>
+                    <div class="difficulty-tags">
+                        <span class="tag mid">高音过渡</span>
+                        <span class="tag low">旋律熟悉</span>
+                        <span class="tag low">氛围怀旧</span>
+                    </div>
+                    <div class="song-actions">
+                        <button class="btn-listen" onclick="showToast('开始播放：后来 - 刘若英')">▶ 试听片段</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 选歌技巧 -->
+        <section class="tips-section">
+            <h2 class="section-title">如何选择KTV好唱的歌？</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <span class="tip-icon">🎤</span>
+                    <h4>了解自己的音域</h4>
+                    <p>不要盲目挑战高音，先测试自己的低音和高音范围，选择在舒适区内的歌曲。</p>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-icon">🎵</span>
+                    <h4>避开旋律复杂的歌</h4>
+                    <p>KTV好唱的歌通常旋律线条简单，不需要复杂的转音和花哨的技巧，重在情感表达。</p>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-icon">🎧</span>
+                    <h4>注意歌曲时长</h4>
+                    <p>尽量选择3-5分钟的歌曲，避免过长导致气息不足，也不要过短导致无法尽兴。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 零基础小白适合唱什么歌？<span>+</span></div>
+                <div class="faq-answer">A: 零基础建议选择节奏舒缓、旋律重复性高、音域跨度小的歌曲，例如《小情歌》、《可惜不是你》或《朋友》等。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何判断一首歌是否适合自己？<span>+</span></div>
+                <div class="faq-answer">A: 可以先在网上试听原版，如果不需要刻意调整音调就能跟唱，且唱完后不觉得嗓子难受，通常就是适合你的歌。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: KTV里的伴奏和原唱有什么区别？<span>+</span></div>
+                <div class="faq-answer">A: 伴奏通常只有背景音乐，没有人声，非常适合清唱或跟唱。原唱则保留了歌手的声音，适合学习技巧。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h5>关于我们</h5>
+                    <p>专注于提供最实用的KTV选歌指南，帮助每一个爱唱歌的人在KTV里找到自信。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>热门分类</h5>
+                    <ul>
+                        <li><a href="#">经典港台</a></li>
+                        <li><a href="#">大陆流行</a></li>
+                        <li><a href="#">日韩动漫</a></li>
+                        <li><a href="#">欧美摇滚</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>帮助中心</h5>
+                    <ul>
+                        <li><a href="#">点歌技巧</a></li>
+                        <li><a href="#">设备使用</a></li>
+                        <li><a href="#">联系投稿</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 KTV好唱的歌 - KTV点歌指南. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // 切换加号减号图标
+                const span = item.querySelector('span');
+                if (parent.classList.contains('active')) {
+                    span.textContent = '-';
+                } else {
+                    span.textContent = '+';
+                }
+            });
+        });
+
+        // 分类按钮交互
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // 这里可以添加筛选逻辑，目前仅做视觉反馈
+            });
+        });
+
+        // 简单的 Toast 提示
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.background = 'rgba(0,0,0,0.8)';
+            toast.style.color = 'white';
+            toast.style.padding = '10px 20px';
+            toast.style.borderRadius = '20px';
+            toast.style.zIndex = '1000';
+            toast.style.animation = 'fadeIn 0.3s';
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        // 添加淡入动画样式
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translate(-50%, 10px); }
+                to { opacity: 1; transform: translate(-50%, 0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+  </html>
