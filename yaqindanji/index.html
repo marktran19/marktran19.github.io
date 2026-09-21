@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="雅琴胆机官方网站。提供胆机音质解析、型号选购指南、胆机与晶体管功放对比、胆机保养维护及发烧友交流社区。深入了解电子管音响的魅力与雅琴品牌特色。">
+    <meta name="keywords" content="雅琴胆机,胆机,电子管功放,胆石对比,Hi-Fi音响,雅琴音响">
+    <title>雅琴胆机-发烧级电子管功放与Hi-Fi音响选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a017; /* 古典金 */
+            --secondary-color: #1a1a1a; /* 深黑 */
+            --bg-color: #f9f9f9;
+            --text-main: #333333;
+            --text-light: #666666;
+            --accent-glow: rgba(212, 160, 23, 0.2);
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--secondary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #b8860b;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/speaker/1920/1080.jpg') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            background-color: #e5c158;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-card {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Product Showcase */
+        .products {
+            padding: 80px 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 220px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-specs {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .product-desc {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .product-link {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .product-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Audio Tech Section */
+        .tech-section {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .tech-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .tech-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tech-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .tech-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tech-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .tech-content p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .tech-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .tech-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-color)"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg>
+                <span>雅琴</span>胆机
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#products">经典型号</a></li>
+                    <li><a href="#tech">胆石对比</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">咨询专家</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>聆听历史的温度</h1>
+                <p>雅琴胆机，传承经典电子管音色，还原最纯粹的音乐本质。无论是爵士乐的慵懒还是古典乐的宏大，都在这温暖的声场中完美呈现。</p>
+                <a href="#products" class="hero-btn">探索系列</a>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">雅琴胆机核心优势</div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">❖</div>
+                        <h3>纯胆设计</h3>
+                        <p>采用全电子管前级与后级架构，摒弃数字电路干扰，提供独特的“胆味”音色。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">✦</div>
+                        <h3>大动态输出</h3>
+                        <p>配备高品质输出变压器，轻松驱动高灵敏度音箱，展现低频的深沉与高频的通透。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">★</div>
+                        <h3>工业级工艺</h3>
+                        <p>进口铜线绕制变压器，航空级散热设计，确保长时间工作下的稳定与耐用。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-title">经典系列推荐</div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">旗舰</span>
+                            <img src="https://picsum.photos/seed/amp1/400/300.jpg" alt="雅琴胆机 YQ-886旗舰版">
+                        </div>
+                        <div class="product-info">
+                            <h3>YQ-886 旗舰版</h3>
+                            <div class="product-specs">8P输出 / 60W x 2 / 55-20Hz</div>
+                            <p class="product-desc">搭载双8P电子管，模拟味浓郁，专为追求极致听感的发烧友打造，具有极高的收藏价值。</p>
+                            <a href="#" class="product-link">查看详情</a>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">畅销</span>
+                            <img src="https://picsum.photos/seed/amp2/400/300.jpg" alt="雅琴胆机 YQ-300A综合机">
+                        </div>
+                        <div class="product-info">
+                            <h3>YQ-300A 综合胆机</h3>
+                            <div class="product-specs">300B输出 / 12W / 40-20Hz</div>
+                            <p class="product-desc">一体式综合胆机，内置唱头放大与音量控制，适合现代家庭客厅使用，音色细腻温润。</p>
+                            <a href="#" class="product-link">查看详情</a>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">入门</span>
+                            <img src="https://picsum.photos/seed/amp3/400/300.jpg" alt="雅琴胆机 YQ-50A单声道">
+                        </div>
+                        <div class="product-info">
+                            <h3>YQ-50A 单声道</h3>
+                            <div class="product-specs">6P1输出 / 5W / 50-20Hz</div>
+                            <p class="product-desc">经典单声道设计，声音定位精准，体积小巧，是组建Hi-Fi系统的高性价比入门之选。</p>
+                            <a href="#" class="product-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Section -->
+        <section id="tech" class="tech-section">
+            <div class="container tech-container">
+                <div class="tech-image">
+                    <img src="https://picsum.photos/seed/tech/600/400.jpg" alt="电子管内部结构">
+                </div>
+                <div class="tech-content">
+                    <h2>为什么选择胆机？</h2>
+                    <p>雅琴胆机致力于探索电子管音频的魅力。与晶体管功放不同，胆机通过电流控制电压工作，具有非线性失真低、瞬态响应柔和等特点。</p>
+                    <ul class="tech-list">
+                        <li>温暖醇厚的音色，人声表现尤为出色</li>
+                        <li>声音具有空间感，仿佛置身录音现场</li>
+                        <li>使用寿命长，具有独特的机械美感</li>
+                        <li>使用过程中灯丝会微微发光，增添氛围</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section id="guide" class="comparison">
+            <div class="container">
+                <div class="section-title">胆机 vs 晶体管功放</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>雅琴胆机</th>
+                                <th>晶体管功放</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>音色风格</td>
+                                <td class="highlight">温暖、柔和、有“胆味”</td>
+                                <td>冷艳、精准、透明度高</td>
+                            </tr>
+                            <tr>
+                                <td>瞬态响应</td>
+                                <td>较慢，但更有弹性</td>
+                                <td class="highlight">极快，适合动态音乐</td>
+                            </tr>
+                            <tr>
+                                <td>功率输出</td>
+                                <td>通常较小，适合小空间</td>
+                                <td class="highlight">功率大，适合大空间</td>
+                            </tr>
+                            <tr>
+                                <td>发热量</td>
+                                <td>较大，需要良好散热</td>
+                                <td class="highlight">相对较小，效率高</td>
+                            </tr>
+                            <tr>
+                                <td>维护成本</td>
+                                <td>电子管有寿命，需定期更换</td>
+                                <td class="highlight">故障率低，长期稳定</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">选购与使用常见问题</div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">雅琴胆机需要特殊的电源线吗？</div>
+                    <div class="faq-answer">是的，胆机对电源纯净度要求较高。建议使用带有良好屏蔽功能的电源线，以减少市电杂波对声音的影响。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">胆机通电后灯丝一直亮着正常吗？</div>
+                    <div class="faq-answer">完全正常。电子管通电后灯丝会预热并发出橙红色的光，这是胆机工作时的标志性特征，也是其独特魅力的来源之一。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">新手应该如何选择胆机功率？</div>
+                    <div class="faq-answer">功率选择取决于您的音箱灵敏度。灵敏度较高的音箱（>88dB）可以选择5W-15W的胆机；低灵敏度音箱建议选择30W以上的胆机。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">雅琴胆机保修期是多久？</div>
+                    <div class="faq-answer">雅琴胆机提供整机两年质保，电子管单独保修一年。具体的保修政策请咨询客服或查阅产品说明书。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于雅琴</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">雅琴音响专注于高保真胆机制造，致力于为发烧友提供声音温暖、性能稳定的Hi-Fi设备。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品系列</h4>
+                    <ul>
+                        <li><a href="#">旗舰系列</a></li>
+                        <li><a href="#">综合胆机</a></li>
+                        <li><a href="#">单声道</a></li>
+                        <li><a href="#">前级放大器</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与服务</h4>
+                    <ul>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">技术支持</a></li>
+                        <li><a href="#">发烧论坛</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-888-8888</li>
+                        <li>邮箱：support@yaqin-hifi.com</li>
+                        <li>地址：中国·XX市音响产业园区88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 雅琴胆机 版权所有 | 本站内容仅供学习参考，不构成购买建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 导航栏滚动高亮
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
