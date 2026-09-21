@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WOW邪DK输出手法指南，包含邪能死疽专精核心循环、技能优先级、配装思路及实战技巧，助您在魔兽世界副本与团本中打出最高DPS。">
+    <meta name="keywords" content="WOW邪DK输出手法, 邪能死疽, 魔兽世界DK, 邪DK, 输出循环, 爆发期">
+    <title>魔兽世界邪DK输出手法-邪能死疽循环与爆发时机详解</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a0e0e;
+            --accent-color: #a83232;
+            --text-main: #f0f0f0;
+            --text-secondary: #b0b0b0;
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --highlight: #d4af37;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--accent-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--highlight);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a:hover {
+            color: var(--highlight);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/dkhero/1600/600') no-repeat center center/cover;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        /* Core Rotation */
+        .rotation-list {
+            counter-reset: rot-counter;
+        }
+
+        .rotation-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .rotation-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .rotation-item::before {
+            counter-increment: rot-counter;
+            content: counter(rot-counter);
+            background-color: var(--accent-color);
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            color: var(--highlight);
+            display: block;
+        }
+
+        .skill-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Priority Rules */
+        .rule-box {
+            background: rgba(168, 50, 50, 0.1);
+            border: 1px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .rule-title {
+            color: var(--accent-color);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: var(--highlight);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .stat-val {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .buff-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .buff-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Cooldowns */
+        .cooldown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .cd-item {
+            background: #333;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .cd-name {
+            display: block;
+            font-weight: bold;
+            color: var(--highlight);
+            margin-bottom: 0.3rem;
+        }
+
+        .cd-time {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                font-size: 0.9rem;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">DK Guide</div>
+        <nav>
+            <ul>
+                <li><a href="#core">核心循环</a></li>
+                <li><a href="#buffs">增益状态</a></li>
+                <li><a href="#cooldowns">爆发时机</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>魔兽世界 邪DK输出手法</h1>
+        <p>掌握邪能死疽专精的核心机制，优化技能循环与爆发时机，在团本与史诗副本中最大化你的邪恶死疽伤害。</p>
+    </div>
+</section>
+
+<main class="container content-grid">
+    <!-- Left Column: Guide Content -->
+    <article>
+        <section class="card" id="core">
+            <h2>核心输出循环</h2>
+            <p style="margin-bottom: 1rem; color: #ccc;">邪DK的循环建立在“死亡凋零”与“暗影之刃”的联动上。保持“邪恶突袭”的层数，并合理利用“献祭光环”维持生存与续航。</p>
+            
+            <div class="rotation-list">
+                <div class="rotation-item">
+                    <span class="skill-name">邪恶突袭</span>
+                    <span class="skill-desc">主要输出技能。优先级最高，保持层数堆叠。如果层数达到3层，优先使用“邪恶凋零”而非再次突袭。</span>
+                </div>
+                <div class="rotation-item">
+                    <span class="skill-name">暗影之刃</span>
+                    <span class="skill-desc">核心爆发技能。使用后增加所有死亡凋零系技能的层数上限至5层。通常在进入战斗或爆发期开启。</span>
+                </div>
+                <div class="rotation-item">
+                    <span class="skill-name">邪恶凋零</span>
+                    <span class="skill-desc">核心AOE技能。保持层数是DPS的关键。注意：层数越高，伤害倍率越高。</span>
+                </div>
+                <div class="rotation-item">
+                    <span class="skill-name">鲜血奔涌</span>
+                    <span class="skill-desc">爆发期间的核心技能。在开启“暗影之刃”或“鲜血爆发”后使用，立即刷新一个“邪恶凋零”或“邪恶突袭”的冷却。</span>
+                </div>
+                <div class="rotation-item">
+                    <span class="skill-name">血腥打击</span>
+                    <span class="skill-desc">当没有“邪恶凋零”或“邪恶突袭”可用时使用。用于维持符文能量或作为填充技能。</span>
+                </div>
+            </div>
+
+            <div class="rule-box">
+                <span class="rule-title">重要循环规则</span>
+                <ul style="padding-left: 1.2rem; color: #ddd;">
+                    <li><strong>层数管理：</strong> 尽量将“邪恶凋零”保持在3层以上再换目标，避免层数溢出浪费。</li>
+                    <li><strong>换目标：</strong> 邪DK换目标时有“层数惩罚”，因此尽量在一个目标上打完所有层数再切怪。</li>
+                    <li><strong>填充：</strong> 在核心技能冷却时，使用“血腥打击”或“鲜血打击”维持符文能量。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card" id="buffs">
+            <h2>关键增益状态</h2>
+            <p style="margin-bottom: 1rem;">邪DK的输出高度依赖于Buff状态，确保在开启爆发技能前已穿戴好相关饰品和药水。</p>
+            <ul class="buff-list">
+                <li><strong>鲜血爆发：</strong> 提供大量爆发伤害，通常与暗影之刃配合使用。</li>
+                <li><strong>献祭光环：</strong> 提供生存能力，同时为邪DK提供额外的符文能量回复。</li>
+                <li><strong>鲜血之力：</strong> 提升攻击强度，通常通过饰品或天赋获得。</li>
+                <li><strong>暗影之刃：</strong> 增加凋零层数上限，是爆发期的核心。</li>
+            </ul>
+        </section>
+    </article>
+
+    <!-- Right Column: Sidebar -->
+    <aside>
+        <section class="card sidebar-section">
+            <h3 class="sidebar-title">属性优先级</h3>
+            <div class="stat-row">
+                <span>精通</span>
+                <span class="stat-val">最高 (约 50%)</span>
+            </div>
+            <div class="stat-row">
+                <span>急速</span>
+                <span class="stat-val">中等 (减少冷却)</span>
+            </div>
+            <div class="stat-row">
+                <span>暴击</span>
+                <span class="stat-val">较低</span>
+            </div>
+            <div class="stat-row">
+                <span>力量</span>
+                <span class="stat-val">基础属性</span>
+            </div>
+        </section>
+
+        <section class="card sidebar-section" id="cooldowns">
+            <h3 class="sidebar-title">爆发时机</h3>
+            <div class="cooldown-grid">
+                <div class="cd-item">
+                    <span class="cd-name">鲜血爆发</span>
+                    <span class="cd-time">100 能量</span>
+                </div>
+                <div class="cd-item">
+                    <span class="cd-name">暗影之刃</span>
+                    <span class="cd-time">核心爆发</span>
+                </div>
+                <div class="cd-item">
+                    <span class="cd-name">邪能打击</span>
+                    <span class="cd-time">单体爆发</span>
+                </div>
+                <div class="cd-item">
+                    <span class="cd-name">鲜血奔涌</span>
+                    <span class="cd-time">爆发期间刷新</span>
+                </div>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">
+                <strong>建议：</strong> 将核心爆发技能（暗影之刃+鲜血爆发）安排在BOSS狂暴前或小怪密集期。
+            </p>
+        </section>
+
+        <section class="card sidebar-section">
+            <h3 class="sidebar-title">常见问题</h3>
+            <div style="font-size: 0.9rem; color: #ccc;">
+                <p style="margin-bottom: 0.5rem;"><strong>Q: 邪DK怎么叠层数？</strong></p>
+                <p style="margin-bottom: 1rem;">使用“邪恶突袭”叠层数，开启“暗影之刃”后使用“鲜血奔涌”刷新技能，可以快速达到5层层数上限。</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Q: 哪些技能不能被打断？</strong></p>
+                <p>所有核心输出技能（凋零、突袭、鲜血奔涌）都是不可被打断的，可以放心施放。</p>
+            </div>
+        </section>
+    </aside>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 DK Guide. 本页面为魔兽世界游戏攻略，内容基于当前版本机制整理。</p>
+    </div>
+</footer>
+
+</body>
+</html>
