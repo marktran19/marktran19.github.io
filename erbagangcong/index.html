@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="搜博网提供专业的二八杠游戏玩法指南、技巧策略及安全下载服务，致力于为玩家提供公平、透明、刺激的在线博弈体验。">
+    <meta name="keywords" content="二八杠从搜博网开始,二八杠,搜博网,在线博弈,游戏攻略">
+    <title>二八杠从搜博网开始-专业在线博弈平台与游戏策略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e60012;
+            --secondary-color: #1a1a1a;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --accent-gold: #f5a623;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .header-cta:hover {
+            background-color: #cc0010;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--text-main);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            background: var(--bg-color);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Strategy Section */
+        .strategy {
+            padding: 60px 0;
+            background-color: var(--bg-color);
+        }
+
+        .strategy-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .strategy-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .strategy-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .strategy-steps {
+            margin-top: 30px;
+        }
+
+        .step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .step-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .strategy-image {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .strategy-image::after {
+            content: '搜博网 · 专业策略演示';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 10px;
+            font-size: 12px;
+            color: white;
+            border-radius: 4px;
+        }
+
+        /* Game Rules / Info Section */
+        .info-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+            background-color: var(--bg-color);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 15px;
+            padding-left: 36px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #999;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .strategy-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-image {
+                height: 250px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">搜博网<span> · 二八杠</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#game-rules">玩法规则</a></li>
+                    <li><a href="#strategy">技巧攻略</a></li>
+                    <li><a href="#download">下载中心</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header-cta">立即体验</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>二八杠从搜博网开始<br><span>掌握策略，赢在开局</span></h1>
+                <p>搜博网为您提供最权威的二八杠游戏规则解析、高胜率技巧分享及安全便捷的在线游戏环境。无论您是新手还是老手，这里都有您需要的博弈智慧。</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">免费下载APP</a>
+                    <a href="#game-rules" class="btn btn-outline">了解玩法</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择搜博网</h2>
+                    <p>专注二八杠领域，为您提供极致体验</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>公平公正</h3>
+                        <p>采用先进的随机算法与防作弊系统，确保每一局发牌公平，让您的胜负纯粹取决于技巧。</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>极速体验</h3>
+                        <p>优化的网络架构，毫秒级响应速度，告别卡顿，随时随地享受流畅的对战快感。</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🎯</span>
+                        <h3>策略指导</h3>
+                        <p>汇聚资深玩家心得，提供从入门到精通的全方位战术分析，助您快速提升牌技。</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">💰</span>
+                        <h3>丰厚奖励</h3>
+                        <p>每日签到、新手礼包、节日活动，多重福利持续放送，让您的博弈之旅收获满满。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Section -->
+        <section class="strategy" id="strategy">
+            <div class="container">
+                <div class="strategy-layout">
+                    <div class="strategy-content">
+                        <h2>赢在策略，二八杠核心技巧</h2>
+                        <p>二八杠不仅仅是运气的比拼，更是心理博弈与概率计算的结合。在搜博网，我们帮助您构建科学的游戏思维。</p>
+                        
+                        <div class="strategy-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4>观察手牌结构</h4>
+                                    <p>熟悉二八杠的牌型组合是基础。快速识别“豹子”、“顺子”、“刻子”等牌型，是做出出牌决策的前提。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4>控制出牌节奏</h4>
+                                    <p>在多人对局中，学会控制自己的出牌速度。过快暴露意图容易被对手针对，过慢则可能错失良机。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4>心态管理与风控</h4>
+                                    <p>制定合理的资金管理计划，设定止盈止损点。保持冷静的头脑，避免因情绪波动导致判断失误。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="strategy-image">
+                        <!-- Visual representation of strategy -->
+                        <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Rules Section -->
+        <section class="info-section" id="game-rules">
+            <div class="container">
+                <div class="section-title">
+                    <h2>游戏规则与牌型说明</h2>
+                    <p>清晰了解规则，才能制定最佳策略</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>基本牌型</h3>
+                        <ul>
+                            <li>豹子：三张点数相同的牌（如333）。</li>
+                            <li>同花顺：花色相同且点数相连的牌。</li>
+                            <li>金花：花色相同但点数不相连的牌。</li>
+                            <li>顺子：点数相连但花色不同。</li>
+                            <li>对子：两张点数相同，另一张任意。</li>
+                            <li>散牌：无法组成以上牌型。</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>大小比较</h3>
+                        <ul>
+                            <li>豹子 > 同花顺 > 金花 > 顺子 > 对子 > 散牌。</li>
+                            <li>点数相同时，花色从大到小：黑桃 > 红桃 > 梅花 > 方块。</li>
+                            <li>二八杠特有规则：双八倍率加成。</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>胜负判定</h3>
+                        <ul>
+                            <li>玩家与庄家比大小，点数大者获胜。</li>
+                            <li>豹子通杀除同花顺外所有牌型。</li>
+                            <li>二八杠（双八）作为特殊倍率牌型，若双方均为二八杠，则比点数大小。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">搜博网上的二八杠是公平的吗？</div>
+                        <div class="faq-answer">是的，搜博网采用专业的随机数生成算法，并接受第三方监管审计，确保每一局发牌的随机性和公平性，杜绝作弊行为。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">新手玩家如何快速上手？</div>
+                        <div class="faq-answer">建议先在“模拟练习场”熟悉规则和牌型，然后再进入“新手场”进行小额对战。我们提供的攻略板块也有详细的入门教程。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">下载APP需要什么条件？</div>
+                        <div class="faq-answer">搜博网APP完全免费下载，支持iOS和Android系统。下载后需进行实名认证注册即可开始游戏。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>搜博网 · 二八杠</h4>
+                    <p>专注提供高品质的在线博弈平台服务。我们致力于通过技术创新和优质体验，为用户创造一个安全、刺激、公平的数字娱乐空间。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">游戏大厅</a></li>
+                        <li><a href="#">新手指南</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">防沉迷系统</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>客服热线：400-123-4567</li>
+                        <li>工作时间：9:00 - 24:00</li>
+                        <li>电子邮箱：support@soubowang.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 搜博网 版权所有. 未成年人请在监护人指导下参与游戏.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
